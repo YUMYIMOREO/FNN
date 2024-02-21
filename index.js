@@ -1,11 +1,13 @@
 const express = require("express");
 const axios = require("axios");
 const app = express();
+const path = require("path");
 var bodyParser = require("body-parser");
 
-const base_url = "http://localhost:5000";
+const base_url = "http://10.104.14.241";
 //"body-parser": "^1.20.2",
 
+app.set("views", path.join(__dirname,"/public/views"));
 app.set("view engine", "ejs");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
